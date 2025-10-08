@@ -1,0 +1,20 @@
+{
+  "name": "BloodTrack 日次記録（印刷対応）",
+  "short_name": "BloodTrack",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "血糖値・血圧・体温などを日次で記録し、月次で印刷できるPWA",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
