@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BloodTrack v3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen p-4">
+  <div class="max-w-5xl mx-auto bg-white p-6 rounded-2xl shadow-md">
+    <h1 class="text-2xl font-bold mb-4 text-center">血糖値記録アプリ v3</h1>
+    <div class="flex items-center justify-center mb-4">
+      <label for="date" class="mr-2 font-semibold">📅 日付選択：</label>
+      <input type="date" id="date" class="border rounded p-2" />
+    </div>
+
+    <div id="form-container" class="grid grid-cols-4 gap-3 mb-4">
+      <div><label>体温</label><input id="temp" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>朝Libre</label><input id="morning_libre" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>朝単位</label><input id="morning_unit" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>朝食後</label><input id="morning_after" type="number" class="w-full border p-1 rounded" /></div>
+
+      <div><label>昼食前</label><input id="noon_before" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>昼Libre</label><input id="noon_libre" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>昼単位</label><input id="noon_unit" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>昼食後</label><input id="noon_after" type="number" class="w-full border p-1 rounded" /></div>
+
+      <div><label>夕食前</label><input id="eve_before" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>夕Libre</label><input id="eve_libre" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>夕単位</label><input id="eve_unit" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>夕食後</label><input id="eve_after" type="number" class="w-full border p-1 rounded" /></div>
+
+      <div><label>就寝前</label><input id="before_sleep" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>ランタス</label><input id="lantus" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>血圧(上)</label><input id="bp_high" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>血圧(下)</label><input id="bp_low" type="number" class="w-full border p-1 rounded" /></div>
+
+      <div class="col-span-2"><label>備考</label><input id="memo" type="text" maxlength="10" class="w-full border p-1 rounded" /></div>
+      <div><label>ルムジェブ残</label><input id="rum_left" type="number" class="w-full border p-1 rounded" /></div>
+      <div><label>ランタス残</label><input id="lantus_left" type="number" class="w-full border p-1 rounded" /></div>
+    </div>
+
+    <div class="flex justify-center space-x-4">
+      <button id="draftSave" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold px-4 py-2 rounded">📝 下書き保存</button>
+      <button id="save" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded">💾 保存する</button>
+    </div>
+
+    <div id="toast" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 transition-opacity duration-500">
+      保存しました！
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
