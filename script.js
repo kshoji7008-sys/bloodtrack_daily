@@ -1,4 +1,4 @@
-// script.js - main app logic
+// script.js - main app logic (same as v1, included for day-to-day operations)
 const STORAGE_KEY = "bloodtrack_daily_records_v1";
 const DRAFT_KEY = "bloodtrack_daily_draft_v1";
 

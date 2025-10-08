@@ -3,15 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BloodTrack — 日次記録</title>
+  <title>BloodTrack — 日次記録（印刷対応）</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
   <header class="topbar">
-    <h1>BloodTrack — 日次記録</h1>
-    <p class="sub">2026年1月1日から使えるシンプルな記録アプリ</p>
+    <h1>BloodTrack — 日次記録（印刷対応）</h1>
+    <p class="sub">2026年1月1日から使える、印刷用レポート付きPWA</p>
   </header>
 
   <main>
@@ -56,7 +58,7 @@
           <label>ランタス (単位)：<input type="number" id="lantus"></label>
           <label>朝血圧 上：<input type="number" id="bp_high"></label>
           <label>朝血圧 下：<input type="number" id="bp_low"></label>
-          <label>備考：<input type="text" id="note"></label>
+          <label>備考：<input type="text" id="note" maxlength="20"></label>
           <label>ルムジェブ残：<input type="number" id="lumjev_remain"></label>
           <label>ランタス残：<input type="number" id="lantus_remain"></label>
         </fieldset>
@@ -86,10 +88,20 @@
       <div id="reportSummary"></div>
       <canvas id="chart" height="220"></canvas>
     </section>
+
+    <section class="print-area card">
+      <h2>印刷用 月次表（Excelライク）</h2>
+      <label>表示する月： <input type="month" id="printMonth"></label>
+      <div style="margin-top:8px">
+        <button id="renderTable">表を表示</button>
+        <button id="downloadPdf">PDFで出力</button>
+      </div>
+      <div id="printContainer" style="margin-top:12px"></div>
+    </section>
+
   </main>
 
   <footer>BloodTrack — ローカル保存／PWA対応</footer>
-
-  <script src="script.js"></script>
+  <script src="script_print.js"></script>
 </body>
 </html>
